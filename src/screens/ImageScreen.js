@@ -7,13 +7,16 @@ export default () => {
         <View>
             <Text>Image Screen </Text>
             <ImageDetail 
-                title="Forest"
+                title="beach"
+                imageSource={require('../../assets/beach.jpg')}
             />
             <ImageDetail 
-                title="Nature"
+                title="forest"
+                imageSource={require('../../assets/forest.jpg')}
             />
             <ImageDetail 
-                title="Water"
+                title="mountain"
+                imageSource={require('../../assets/mountain.jpg')}
             />
         </View>
     )
