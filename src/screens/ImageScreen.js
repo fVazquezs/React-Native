@@ -9,14 +9,17 @@ export default () => {
             <ImageDetail 
                 title="beach"
                 imageSource={require('../../assets/beach.jpg')}
+                score={9}
             />
             <ImageDetail 
                 title="forest"
                 imageSource={require('../../assets/forest.jpg')}
+                score={6}
             />
             <ImageDetail 
                 title="mountain"
                 imageSource={require('../../assets/mountain.jpg')}
+                score={4}
             />
         </View>
     )
