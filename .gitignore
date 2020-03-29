@@ -1,2 +1,4 @@
 package-lock.json
 yelpconfig.js
+
+**/node_modules/**
