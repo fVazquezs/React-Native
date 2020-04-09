@@ -1,11 +1,31 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { StyleSheet, SafeAreaView } from 'react-native'
+import { Text } from 'react-native-elements'
+import  { requestPermissionsAsync } from 'expo-location'
+import Map from '../components/Map'
 
 const TrackCreateScreen = () => {
-    return(
-        <View>
-            <Text style={{fontSize: 48}}>TrackCreateScreen</Text>
-        </View>
+
+    const [err, setErr] = useState(null)
+
+    const startWatching = async () => {
+        try {
+            await requestPermissionsAsync()
+        } catch (e) {
+            setErr(e)
+        }
+    }
+
+    useEffect(() => {
+        startWatching()
+    }, [])
+
+    return (
+        <SafeAreaView>
+            <Text h2>Create a Track</Text>
+            <Map />
+            {err ? <Text>{err.message}</Text> : null}
+        </SafeAreaView>
     )
 }
 
